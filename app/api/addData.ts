@@ -19,10 +19,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     try {
       // Create a MySQL connection to Raspberry Pi
       const db = await mysql.createConnection({
-        host: '192.168.1.50', // Raspberry Pi's IP address
-        user: 'root',
-        password: 'your_raspberry_pi_mysql_password',  // Replace with your MySQL password
-        database: 'sensor_data',
+        host: '192.168.41.193', // Raspberry Pi's IP address
+        user: 'sleepdeepfried',
+        password: '@Earlxdmysql14',  // Replace with your MySQL password
+        database: 'DHT',
       });
 
       // Insert data into the MySQL database
