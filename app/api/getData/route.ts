@@ -4,12 +4,12 @@ import mysql from 'mysql2/promise';
 // This function handles GET requests to fetch sensor data
 export async function GET() {
     try {
-        // Create a MySQL connection to Raspberry Pi
+        // Create a MySQL connection to Raspberry Pi using environment variables
         const db = await mysql.createConnection({
-            host: '192.168.41.193', // Raspberry Pi's IP address
-            user: 'sleepdeepfried',
-            password: '@Earlxdmysql14',  // Replace with your MySQL password
-            database: 'DHT',
+            host: process.env.DB_HOST, // MySQL host
+            user: process.env.DB_USER, // MySQL user
+            password: process.env.DB_PASSWORD, // MySQL password
+            database: process.env.DB_NAME, // MySQL database name
         });
 
         // Query to fetch data from the database
