@@ -18,11 +18,13 @@ export async function POST(req: Request) {
     try {
         // Create a MySQL connection to Raspberry Pi
         const db = await mysql.createConnection({
-            host: '192.168.41.193', // Raspberry Pi's IP address
+            host: '192.168.41.193',
             user: 'sleepdeepfried',
-            password: '@Earlxdmysql14',  // Replace with your MySQL password
+            password: '@Earlxdmysql14',
             database: 'DHT',
+            connectTimeout: 10000, // 10 seconds
         });
+        
 
         // Insert data into the MySQL database
         const query = `INSERT INTO dht11_data (humidity, temperature_c) VALUES (?, ?)`;
