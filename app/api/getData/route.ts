@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import mysql from 'mysql2/promise';
 
 // This function handles GET requests to fetch sensor data
-export async function GET(req: Request) {
+export async function GET() {
     try {
         // Create a MySQL connection to Raspberry Pi
         const db = await mysql.createConnection({
